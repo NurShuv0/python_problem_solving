@@ -1,0 +1,1 @@
+{"name":"Local: digit_sum","url":"d:\\MY_CODE\\phitron\\problem_solving_in_python\\digit_sum.py","tests":[{"id":1772719142534,"input":"5\n13305\n","output":"12\n"},{"id":1772719628234,"input":"5\n12342","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\phitron\\problem_solving_in_python\\digit_sum.py","group":"local","local":true}
