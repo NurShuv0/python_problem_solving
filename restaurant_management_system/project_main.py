@@ -40,10 +40,14 @@ class admin(user):
     def view_employee(self, restaurant):
         restaurant.view_employee()
 
+    def add_new_item(self, restaurant, item):
+        restaurant.menu.add_menu_item(item)
+
 class Restaurant():
     def __init__(self, name):
         self.name = name 
         self.employees = []  #database static
+        self.menu = FoodItem()
 
     def add_employee(self, employee_obj):
         self.employees.append(employee_obj)
