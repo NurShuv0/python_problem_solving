@@ -1,0 +1,1 @@
+{"name":"Local: py","url":"d:\\MY_CODE\\phitron\\py.py","tests":[{"id":1772147958114,"input":"3\n8 10 20\n8 1 20\n5 3 2\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\phitron\\py.py","group":"local","local":true}
