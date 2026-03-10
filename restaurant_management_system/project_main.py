@@ -7,6 +7,51 @@ class user(ABC):
         self.email = email
         self.address = address
 
+class Customer(user):
+    def __init__(self, name, email, phone, address):
+        super().__init__(name,email, phone, address)
+        self.cart = Order()
+
+    def view_menu(self, restaurant):
+        restaurant.menu.show_menu()
+
+    def add_to_cart(self, restaurant, item_name, quantity):
+        item = restaurant.menu.find_item(item_name)
+        if item:
+            item.quantity = quantity
+            self.cart.add_item(item)
+        else:
+            print("item not found")
+
+    def view_cart(self):
+        print("**view cart**")
+        print("Name\tprice\tquantity")
+        for item, quantity in self.cart.items():
+            print(f"{item.name} {item.price} {item.quantity}")
+            print("Item added successfully!!")
+        print(f"Total price : {self.cart.total_price}")
+ 
+class Order:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item):
+        if item in self.items:
+            self.items[item] += item.quantity #if item is in cart
+        else:
+            self.items[item] = item.quantity #if item is not in cart
+
+    def remove(self, item):
+        if item in self.items:
+            del self.items[item]
+
+    def total_price(self):
+        return sum(item.price * quantity for item, quantity in self.items.items())
+    
+    def clear(self):
+        self.items = {}
+
+            
 
 class employee(user):
     def __init__(self, name, email, phone, address, age, designation, salary):
@@ -43,11 +88,14 @@ class admin(user):
     def add_new_item(self, restaurant, item):
         restaurant.menu.add_menu_item(item)
 
+    def remove_item(self, restaurant, item):
+        restaurant.menu.remove_item(item)
+
 class Restaurant():
     def __init__(self, name):
         self.name = name 
         self.employees = []  #database static
-        self.menu = FoodItem()
+        self.menu = Menu()
 
     def add_employee(self, employee_obj):
         self.employees.append(employee_obj)
@@ -97,8 +145,19 @@ class FoodItem:
 # adm.add_employee("nur_employee", "employee@gmail.com", 287392, "bosti", 30, "waiter", 10000)
 # adm.view_employee()
 
-mn = Menu()
-item = FoodItem("pizaa", 100, 10)
-mn.add_menu_item(item)
-mn.show_menu()
+Nur_res = Restaurant("Harun er vhater hotel")
 
+mn = Menu()
+item = FoodItem("pizzaa", 500, 15)
+item2 = FoodItem("burger", 100, 10)
+item3 = FoodItem("biriyani", 300, 5)
+admin1 = admin("nur_admin", "nur@gmail.com", 89789676, "rupnagar")
+admin1.add_new_item(Nur_res, item)
+admin1.add_new_item(Nur_res, item2)
+
+mn.add_menu_item(item)
+mn.add_menu_item(item2)
+mn.add_menu_item(item3)
+# mn.show_menu()
+customer1 = Customer("nur_customer", "nur@gmail.com", 89789676, "rupnagar")
+customer1.view_menu(Nur_res)
