@@ -17,18 +17,23 @@ class Customer(user):
 
     def add_to_cart(self, restaurant, item_name, quantity):
         item = restaurant.menu.find_item(item_name)
+        # print(f"item quantity is {item.quantity}")
         if item:
-            item.quantity = quantity
-            self.cart.add_item(item)
+            if quantity > item.quantity:
+                print("item quantity is exceeded!!!")
+            else :
+                item.quantity = quantity
+                self.cart.add_item(item)
+                print("Item added successfully!!")
         else:
             print("item not found")
 
     def view_cart(self):
         print("**view cart**")
         print("Name\tprice\tquantity")
-        for item, quantity in self.cart.items():
-            print(f"{item.name} {item.price} {item.quantity}")
-            print("Item added successfully!!")
+        for item, quantity in self.cart.items.items():
+            print(f"{item.name}\t{item.price}\t{quantity}")
+            # print("Item added successfully!!")
         print(f"Total price : {self.cart.total_price}")
  
 class Order:
@@ -44,7 +49,7 @@ class Order:
     def remove(self, item):
         if item in self.items:
             del self.items[item]
-
+    @property
     def total_price(self):
         return sum(item.price * quantity for item, quantity in self.items.items())
     
@@ -148,7 +153,7 @@ class FoodItem:
 Nur_res = Restaurant("Harun er vhater hotel")
 
 mn = Menu()
-item = FoodItem("pizzaa", 500, 15)
+item = FoodItem("pizza", 500, 15)
 item2 = FoodItem("burger", 100, 10)
 item3 = FoodItem("biriyani", 300, 5)
 admin1 = admin("nur_admin", "nur@gmail.com", 89789676, "rupnagar")
@@ -161,3 +166,9 @@ mn.add_menu_item(item3)
 # mn.show_menu()
 customer1 = Customer("nur_customer", "nur@gmail.com", 89789676, "rupnagar")
 customer1.view_menu(Nur_res)
+
+item_name = input("Enter item Name : ")
+item_quantity = int(input("Enter item quantity : "))
+
+customer1.add_to_cart(Nur_res, item_name, item_quantity)
+customer1.view_cart()

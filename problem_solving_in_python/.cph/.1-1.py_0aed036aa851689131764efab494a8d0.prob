@@ -1,0 +1,1 @@
+{"name":"Local: 1-1","url":"d:\\MY_CODE\\phitron\\problem_solving_in_python\\1-1.py","tests":[{"id":1773271922810,"input":"4\n3\n111\n6\n011011\n7\n1011101\n9\n100101101\n","output":"2 3\n3 5\n4 7\n5 7\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\MY_CODE\\phitron\\problem_solving_in_python\\1-1.py","group":"local","local":true}
