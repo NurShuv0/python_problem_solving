@@ -1,0 +1,10 @@
+# n = int(input())
+# q = int(input())
+n, q = map(int, input().split())
+arr = list(map(int, input().split()))
+for i in range(q): 
+    # left = int(input())
+    # right = int(input())
+    left, right = map(int, input().split())
+    result = sum(arr[left-1:right])
+    print(result)
