@@ -1,0 +1,144 @@
+/* h1{
+    color: red;
+} */
+.title1 {
+   color: brown;
+}
+
+.title2 {
+   color: green;
+}
+
+.titlep {
+   color: blueviolet;
+}
+
+#nurID {
+   color: rgb(84, 100, 68);
+}
+
+.boxPlot {
+   width: 100px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   padding-left: 60px;
+   border: 1px solid green;
+   text-align: center;
+   margin-left: 300px;
+   margin-bottom: 100px;
+   margin-top: 200px;
+   position: fixed;
+}
+
+.inline1 {
+   display: inline;
+   /* display: none; */
+}
+
+#inline2 {
+   display: inline;
+}
+
+.test {
+   color: chocolate;
+   font-size: 20px;
+   font-weight: bold;
+   /* font-style: italic; */
+   text-align: center;
+   width: 40%;
+   margin: auto;
+   font-family: "Roboto", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 300;
+   font-style: normal;
+   font-variation-settings:
+      "wdth" 100;
+
+}
+
+.box_all{
+   width: 200px;
+   height: 100px;
+   margin-top:50px
+
+}
+
+.box1{
+   border:2px solid green;
+   position:relative;
+   left: 500px;
+   top:100px;
+   background-color: green;
+
+}
+
+.box2{
+   border:2px solid red;
+   /* position:fixed;    */
+}
+.box3{
+   border:3px solid yellow;
+}
+.red{
+   width: 50px;
+   height: 50px;
+   border-radius: 100px;
+   border:2px solid red;
+   background-color: red;
+   position:absolute;
+   left:60px;
+   top:25px;
+   /* margin: 50px; */
+}
+
+.line1{
+   width: 200px;
+   height: 200px;
+   border: 2px solid red;
+}
+.line2{
+   width: 200px;
+   height: 200px;
+   border: 2px solid blue;
+}
+.line3{
+   width: 200px;
+   height: 200px;
+   border: 2px solid red;
+}
+.line4{
+   width: 200px;
+   height: 200px;
+   border: 2px solid blue;
+}
+.linecontainer{
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-between;
+   /* width: 100%; */
+   height: 100vh;
+   border: 1px solid blueviolet;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.banner{
+   height: 700px;
+   width: 500px;
+   border: 1px solid green;
+   color: green;
+   /* margin-top: 100px; */
+   margin:auto;
+   background-image: url('image/img.png'), linear-gradient(45deg, rgb(139, 139, 106), rgb(112, 167, 112));
+   background-blend-mode: overlay;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+.button{
+   height: 100px;
+   width: 100px;
+   padding: 30px;
+   color: green;
+   background: linear-gradient(45deg,red, blue);
+}

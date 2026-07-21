@@ -18,7 +18,7 @@ print(new)
 
 new[1] = "no one"
 
-print(new[1])
+print(new)
 
 popped_item = new.popitem()
 print(popped_item)

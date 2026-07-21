@@ -59,8 +59,8 @@ def admin_menu():
         choice = int(input("Enter your choice : "))
         if choice == 1:
             item_name = input("Enter Item Name : ")
-            item_price = input("Enter item price : ")
-            item_quantity = input("Enter item quantity : ")
+            item_price = float(input("Enter item price : "))
+            item_quantity = int(input("Enter item quantity : "))
             item = FoodItem(item_name, item_price, item_quantity)
             adm.add_new_item(nur_restaurant, item)
         elif choice == 2:
