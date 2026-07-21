@@ -1,0 +1,2 @@
+nur = input()
+print(nur)
